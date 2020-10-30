@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "baithimodule5"
+    }
+  },
+  "defaultProject": "baithimodule5",
+  "cli": {
+    "analytics": "e9010ae8-2a9c-4776-a033-e277738e7752"
+  }
 }

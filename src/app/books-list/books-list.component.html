@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-12 col-lg-12" style="text-align: center; margin: 10px">
+    <h1>Danh sách cuốn sách</h1>
+  </div>
+  <div class="col-md-12 col-lg-12" style="text-align: center; margin: 10px">
+    <p>Có {{booksList.length}} cuốn sách!</p>
+  </div>
+  <div class="col-md-8 col-lg-8" style="float: left; margin: 10px">
+    {{message}}
+  </div>
+  <div class="col-md-1 col-lg-1" style="float: right; margin: 10px">
+    <button class="btn btn-outline-primary" routerLink="create">Create</button>
+  </div>
+  <div>
+    <table class="table table">
+      <tr style="text-align: center">
+        <th>STT</th>
+        <th>Tên cuốn sách</th>
+        <th>Tác giả</th>
+        <th colspan="2">Hành động</th>
+      </tr>
+      <tr  style="text-align: center" *ngFor="let books of booksList; index as i">
+        <td>{{i + 1}}</td>
+        <td style="text-align: left"><a [routerLink]="['details', books.id]">{{books.title}}</a></td>
+        <td style="text-align: left">{{books.author}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="[books.id]">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteBooks(books.id, books.title)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
